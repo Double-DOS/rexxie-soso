@@ -44,7 +44,7 @@ const Vendors = () => {
           <Box
             bgColor={"pink"}
             key={v.name}
-            onClick={() => window.open(v.link, '_blank')}
+            onClick={() => window.open(v.link, "_blank")}
             display={"flex"}
             flexDirection={"column"}
             justifyItems={"center"}
