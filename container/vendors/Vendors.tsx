@@ -40,13 +40,11 @@ const Vendors = () => {
       </div>
 
       <Box display={"flex"} flexDirection={"row"} overflowX={"scroll"} gap={20}>
-        {vendors.map((v, i) => (
+        {vendors.map((v) => (
           <Box
             bgColor={"pink"}
-            key={i}
-            onClick={() =>
-              typeof window === undefined && window.location.replace(v.link)
-            }
+            key={v.name}
+            onClick={() => window.open(v.link, '_blank')}
             display={"flex"}
             flexDirection={"column"}
             justifyItems={"center"}
