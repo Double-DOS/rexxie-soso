@@ -1,6 +1,7 @@
 import { CustomText } from "@/components/CustomText";
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
+import { HomeSubText, VendorStyle } from "../maincontainer/layout.style";
 
 const Vendors = () => {
   const vendors = [
@@ -24,16 +25,19 @@ const Vendors = () => {
     },
   ];
   return (
-    <div>
-      <CustomText variant="h2" type="primary" weight="normal">
-        FEATURED VALENTINE VENDORS
-      </CustomText>
-      <CustomText variant="h5" type="primary" weight="normal">
-        Valentine is a day to exchange gifts with your loved ones and remind
-        them of hw important they are to you. We also know how making a gift
-        decision can be hard. So, we&lsquo;ve arranged capable vendors to ensure
-        your new VAL partner gets befiting gifts.
-      </CustomText>
+    <VendorStyle>
+      <div>
+        {" "}
+        <CustomText variant="p" type="primary" weight="normal">
+          FEATURED VALENTINE VENDORS
+        </CustomText>
+        <CustomText variant="h5" type="primary" weight="normal">
+          Valentine is a day to exchange gifts with your loved ones and remind
+          them of hw important they are to you. We also know how making a gift
+          decision can be hard. So, we&lsquo;ve arranged capable vendors to
+          ensure your new VAL partner gets befiting gifts.
+        </CustomText>
+      </div>
 
       <Box display={"flex"} flexDirection={"row"} overflowX={"scroll"} gap={20}>
         {vendors.map((v, i) => (
@@ -60,7 +64,7 @@ const Vendors = () => {
           </Box>
         ))}
       </Box>
-    </div>
+    </VendorStyle>
   );
 };
 

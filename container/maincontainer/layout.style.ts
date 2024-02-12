@@ -80,3 +80,15 @@ export const AvatarSubText = styled(SubText)`
        gap:15px;
     `}
 `;
+
+export const VendorStyle = styled.div`
+    width:70% ;
+    text-align:center ;
+    display:flex ;
+    flex-direction:column ;
+    gap:20px;
+    ${responsive("$small")`
+        width:100%;
+        gap:15px;
+    `}
+`

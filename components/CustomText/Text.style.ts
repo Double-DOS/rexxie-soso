@@ -51,6 +51,12 @@ export const Primary =styled.p<{
             ${responsive("$small")`
             font-size: 14px;`}
           `
+        : variant === "p"
+        ? css`
+          font-size: 40px;
+            ${responsive("$small")`
+            font-size: 24px;`}
+          `
         : css`
             font-size: 1600px;
             line-height: 150%;
