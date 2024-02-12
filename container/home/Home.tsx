@@ -29,7 +29,7 @@ const HomeContainer = () => {
     const { name, value } = e.target;
     setUserDetails((prevDetails) => ({
       ...prevDetails,
-      [name]: value,
+      [name]: e.target.type === 'text' ? value.toLowerCase() : value,
     }));
   };
 
