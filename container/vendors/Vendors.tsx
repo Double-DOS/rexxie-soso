@@ -51,6 +51,7 @@ const Vendors = () => {
             alignItems={"center"}
             padding={10}
             borderRadius={20}
+            cursor={"pointer"}
           >
             <CustomText variant="h5" type="primary" weight="normal">
               Name: {v.name}

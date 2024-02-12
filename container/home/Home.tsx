@@ -122,7 +122,7 @@ const HomeContainer = () => {
             value={userDetails.phoneNumber}
             padding={"14px 20px"}
             borderRadius={"4px"}
-            placeholder="Phone Number"
+            placeholder="Whatsapp Number"
             required
           />
           <Select
