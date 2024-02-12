@@ -27,9 +27,13 @@ const HomeContainer = () => {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
+    let formatValue = e.target.value;
+    if (name === "email") {
+      formatValue = value.toLowerCase();
+    }
     setUserDetails((prevDetails) => ({
       ...prevDetails,
-      [name]: e.target.type === 'text' ? value.toLowerCase() : value,
+      [name]: formatValue,
     }));
   };
 
