@@ -44,7 +44,17 @@ const AvatarContainer = () => {
       </div>
 
       <CustomText variant="h3" type="primary" weight="normal">
-        Heyy <b>{data?.randomName}</b> this your chat avatar
+        <div style={{ textAlign:"center" }}>
+          {" "}
+          Heyy <b>{data?.randomName}</b> this your chat avatar
+        </div>
+
+        <CustomText variant="h4" type="primary" weight="normal">
+          <div style={{ color: "red" }}>
+            {" "}
+            Note that, you can only know your match on Valentine's day
+          </div>
+        </CustomText>
       </CustomText>
 
       <Avatar>

@@ -144,7 +144,7 @@ const Rexxie_Soso = () => {
         >
           <Input
             type="text"
-            placeholder="Tell us how you feel"
+            placeholder="Send anonymous message to the room"
             width="100%"
             border="none"
             padding="10px"
