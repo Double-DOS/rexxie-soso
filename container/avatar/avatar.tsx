@@ -52,7 +52,7 @@ const AvatarContainer = () => {
         <CustomText variant="h4" type="primary" weight="normal">
           <div style={{ color: "red" }}>
             {" "}
-            Note that, you can only know your match on Valentine's day
+            Come back here on Valentine’s Day to see your Match 🎁
           </div>
         </CustomText>
       </CustomText>
