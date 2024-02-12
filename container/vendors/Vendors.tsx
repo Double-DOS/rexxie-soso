@@ -33,7 +33,7 @@ const Vendors = () => {
         </CustomText>
         <CustomText variant="h5" type="primary" weight="normal">
           Valentine is a day to exchange gifts with your loved ones and remind
-          them of hw important they are to you. We also know how making a gift
+          them of how important they are to you. We also know how making a gift
           decision can be hard. So, we&lsquo;ve arranged capable vendors to
           ensure your new VAL partner gets befiting gifts.
         </CustomText>
