@@ -90,6 +90,21 @@ const HomeContainer = () => {
           alt="image_test"
         />
       </div>
+      <CustomText variant="h5" type="primary" weight="normal">
+        If you have registered before, Please make sure to use the same email as
+        you registered to log in.
+      </CustomText>
+      <CustomText
+        variant="h5"
+        type="primary"
+        weight="normal"
+        style={{ color: "red" }}
+      >
+        <div style={{ color: "red" }}>OR</div>
+      </CustomText>
+      <CustomText variant="h5" type="primary" weight="normal">
+        If you are just coming for the first time, you can still get a match!
+      </CustomText>
 
       <HomeSubText>
         <form onSubmit={onSubmit}>
