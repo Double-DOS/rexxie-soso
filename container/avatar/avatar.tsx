@@ -112,7 +112,7 @@ const AvatarContainer = () => {
                 </Box>
               );
             })
-          ) : (
+          ) : data?.matchedto ? (
             <Avatar>
               <Box
                 bgColor={"pink"}
@@ -125,11 +125,11 @@ const AvatarContainer = () => {
                 cursor={"pointer"}
               >
                 <CustomText variant="h5" type="primary" weight="normal">
-                  Name: {data?.matchedTo.firstName} {data?.matchedTo.lastName}
+                  Name: {data?.matchedTo?.firstName} {data?.matchedTo?.lastName}
                 </CustomText>
                 <Box textAlign={"center"}>
-                  {data?.matchedTo.gender === "M" ||
-                  data?.matchedTo.gender === "m" ? (
+                  {data?.matchedTo?.gender === "M" ||
+                  data?.matchedTo?.gender === "m" ? (
                     <Image
                       src={"/images/male.jpg"}
                       height={250}
@@ -146,10 +146,15 @@ const AvatarContainer = () => {
                   )}
                 </Box>
                 <CustomText variant="h5" type="primary" weight="normal">
-                  Phone Number: {data?.matchedTo.phoneNumber}
+                  Phone Number: {data?.matchedTo?.phoneNumber}
                 </CustomText>
               </Box>
             </Avatar>
+          ) : (
+            <CustomText variant="h5" type="primary" weight="normal">
+              Please check back in few minutes as your VAL has not logged in
+              today!
+            </CustomText>
           )}
         </Box>
       </VendorStyle>
