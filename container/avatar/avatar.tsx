@@ -73,7 +73,7 @@ const AvatarContainer = () => {
           gap={20}
         >
           {data?.gender == "F" ? (
-            data?.matches.map((match: any) => {
+            data?.matches?.map((match: any) => {
               return (
                 <Box
                   bgColor={"pink"}
