@@ -112,7 +112,7 @@ const AvatarContainer = () => {
                 </Box>
               );
             })
-          ) : data?.matchedto ? (
+          ) : data?.matchedTo ? (
             <Avatar>
               <Box
                 bgColor={"pink"}
