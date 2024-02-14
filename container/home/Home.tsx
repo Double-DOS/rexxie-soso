@@ -64,7 +64,7 @@ const HomeContainer = () => {
           toast.error(response.data.message);
           setRetunedData(response.data.data);
         } else {
-          toast.success(response.data.message);
+          toast.success("Happy Valentune!");
           setRetunedData(response.data.data);
           router.push("/introduction");
         }
