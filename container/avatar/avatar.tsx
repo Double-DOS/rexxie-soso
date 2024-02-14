@@ -6,7 +6,11 @@ import { useRouter } from "next/router";
 import { Avatars } from "./images";
 import Image from "next/image";
 import { Box, Center, Grid, useMediaQuery } from "@chakra-ui/react";
-import { Avatar, ButtonStyle } from "../maincontainer/layout.style";
+import {
+  Avatar,
+  ButtonStyle,
+  VendorStyle,
+} from "../maincontainer/layout.style";
 
 const AvatarContainer = () => {
   const [selectedImg, setSelectedImg] = useState("");
@@ -43,22 +47,115 @@ const AvatarContainer = () => {
         />
       </div>
 
-      <CustomText variant="h3" type="primary" weight="normal">
-        <div style={{ textAlign:"center" }}>
-          {" "}
-          Heyy <b>{data?.randomName}</b> this your chat avatar
-        </div>
-
-        <CustomText variant="h4" type="primary" weight="normal">
+      <CustomText
+        variant="h3"
+        type="primary"
+        weight="normal"
+        style={{ textAlign: "center" }}
+      >
+        {" "}
+        Heyy <b>{data?.firstName}!</b> Happy Valentine!
+      </CustomText>
+      <CustomText variant="h4" type="primary" weight="normal">
+        <div style={{ color: "red" }}>Meet your match! 🎁</div>
+        {data?.gender == "F" && (
           <div style={{ color: "red" }}>
             {" "}
-            Come back here on Valentine’s Day to see your Match 🎁
+            or should we say &quot;matches&quot;? 😁{" "}
           </div>
-        </CustomText>
+        )}
       </CustomText>
-
+      <VendorStyle>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          overflowX={"scroll"}
+          gap={20}
+        >
+          {data?.gender == "F" ? (
+            data?.matches.map((match: any) => {
+              return (
+                <Box
+                  bgColor={"pink"}
+                  key={match.id}
+                  display={"flex"}
+                  flexDirection={"column"}
+                  justifyItems={"center"}
+                  alignItems={"center"}
+                  padding={10}
+                  borderRadius={20}
+                  cursor={"pointer"}
+                >
+                  <CustomText variant="h5" type="primary" weight="normal">
+                    Name: {match.firstName} {match.lastName}
+                  </CustomText>
+                  <Box textAlign={"center"}>
+                    {match.gender === "M" || match.gender === "m" ? (
+                      <Image
+                        src={"/images/male.jpg"}
+                        height={250}
+                        width={250}
+                        alt="image_test"
+                      />
+                    ) : (
+                      <Image
+                        src={"/images/female.jpg"}
+                        height={250}
+                        width={250}
+                        alt="image_test"
+                      />
+                    )}
+                  </Box>
+                  <CustomText variant="h5" type="primary" weight="normal">
+                    Phone Number: {match.phoneNumber}
+                  </CustomText>
+                </Box>
+              );
+            })
+          ) : (
+            <Avatar>
+              <Box
+                bgColor={"pink"}
+                display={"flex"}
+                flexDirection={"column"}
+                justifyItems={"center"}
+                alignItems={"center"}
+                padding={10}
+                borderRadius={20}
+                cursor={"pointer"}
+              >
+                <CustomText variant="h5" type="primary" weight="normal">
+                  Name: {data?.matchedTo.firstName} {data?.matchedTo.lastName}
+                </CustomText>
+                <Box textAlign={"center"}>
+                  {data?.matchedTo.gender === "M" ||
+                  data?.matchedTo.gender === "m" ? (
+                    <Image
+                      src={"/images/male.jpg"}
+                      height={250}
+                      width={250}
+                      alt="image_test"
+                    />
+                  ) : (
+                    <Image
+                      src={"/images/female.jpg"}
+                      height={250}
+                      width={250}
+                      alt="image_test"
+                    />
+                  )}
+                </Box>
+                <CustomText variant="h5" type="primary" weight="normal">
+                  Phone Number: {data?.matchedTo.phoneNumber}
+                </CustomText>
+              </Box>
+            </Avatar>
+          )}
+        </Box>
+      </VendorStyle>
+      {/* 
       <Avatar>
-        {/* <Grid templateColumns={gridTemplateColumns} gap={2}>
+        <Grid templateColumns={gridTemplateColumns} gap={2}>
           {Avatars.map((avatar, id) => (
             <Image
               onClick={() => handleClick(avatar.src)}
@@ -74,7 +171,7 @@ const AvatarContainer = () => {
               }}
             />
           ))}
-        </Grid> */}
+        </Grid> 
         <Box textAlign={"center"}>
           {data?.gender === "M" || data?.gender === "m" ? (
             <Image
@@ -92,13 +189,8 @@ const AvatarContainer = () => {
             />
           )}
         </Box>
-
-        <Button size="normal" variant="primary" onClick={handleLink}>
-          <ButtonStyle>
-            Continue <Arrow />
-          </ButtonStyle>
-        </Button>
       </Avatar>
+      */}
     </>
   );
 };
